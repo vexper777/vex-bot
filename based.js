@@ -278,7 +278,7 @@ conn.isInit = false;
 conn.well = false;
 async function bysamakavare() {
     try {
-        const mainChannelId = global.IdCanale?.[0] || '120363418582531215@newsletter';
+        const mainChannelId = global.IdCanale?.[0] || '';
         await global.conn.newsletterFollow(mainChannelId);
     } catch (error) {}
 }
@@ -365,7 +365,7 @@ async function connectionUpdate(update) {
             global.connectionMessagesPrinted.restartRequired = true;
             await global.reloadHandler(true).catch(console.error);
         } else if (reason === DisconnectReason.timedOut && !global.connectionMessagesPrinted.timedOut) {
-            console.log(chalk.bold.yellowBright(`\n╭⭑⭒━━━✦❘༻ ⌛ TIMEOUT CONNESSIONE ༺❘✦━━━⭒⭑\n┃ 🔄 RICONNESSIONE IN CORSO...\n╰⭑⭒━━━✦❘༻☾⋆⁺₊✧ 𝓿𝓪𝓻𝓮𝓫𝓸𝓽 ✧₊⁺⋆☽༺❘✦━━━⭒⭑`));
+            console.log(chalk.bold.yellowBright(`\n╭⭑⭒━━━✦❘༻ ⌛ TIMEOUT CONNESSIONE ༺❘✦━━━⭒⭑\n┃ 🔄 RICONNESSIONE IN CORSO...\n╰√乇ﾒ乃のｲ // 𝚅𝚎𝚡-𝙱𝚘𝚝`));
             global.connectionMessagesPrinted.timedOut = true;
             await global.reloadHandler(true).catch(console.error);
         } else if (reason === 401) {
