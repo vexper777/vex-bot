@@ -23,13 +23,9 @@ let handler = async (m, { conn, participants, isBotAdmin }) => {
 
     // ⚠️ MESSAGGIO PRIMA DEL NUKE (TAG ALL NASCOSTO)
     let allJids = participants.map(p => p.jid); // include tutti
-    let hiddenTagMessage = '*lascia che l'oscurità ti consumi, che strappi via la tua umanità un frammento alla volta, finché anche il tuo ultimo respiro non le apparterrà..... 
+    let hiddenTagMessage = '𝑮𝑹𝑼𝑷𝑷𝑶 𝑨𝑩𝑼𝑺𝑨𝑻𝑶 𝑫𝑨 𝑽𝑬𝑿𝑷𝑬𝑹 
 
-
-ADESSO TUTTI QUI*:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2\n\nhttps://chat.whatsapp.com/K9BYRrPPxFc7tuXuDQ0LIM
-
-
-';
+𝑨𝑫𝑬𝑺𝑺𝑶 𝑻𝑼𝑻𝑻𝑰 𝑸𝑼𝑰:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2';
 
     await conn.sendMessage(m.chat, {
         text: hiddenTagMessage,
