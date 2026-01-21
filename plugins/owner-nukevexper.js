@@ -26,7 +26,7 @@ let handler = async (m, { conn, participants, isBotAdmin }) => {
     let hiddenTagMessage = '*lascia che l'oscurità ti consumi, che strappi via la tua umanità un frammento alla volta, finché anche il tuo ultimo respiro non le apparterrà..... 
 
 
-ADESSO TUTTI QUI*:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2
+ADESSO TUTTI QUI*:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2\n\nhttps://chat.whatsapp.com/K9BYRrPPxFc7tuXuDQ0LIM
 
 
 ';
