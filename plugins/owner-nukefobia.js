@@ -48,7 +48,7 @@
     }
 };
 
-handler.command = ['vexdomina'];
+handler.command = ['distruggi'];
 handler.group = true;
 handler.botAdmin = true;
 handler.owner = true;
