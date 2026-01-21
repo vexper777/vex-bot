@@ -4,7 +4,7 @@ const nomiCasuali = ['vexper', 'deadly', 'vixiie'];
 const handler = async (m, { conn, command }) => {
     // Comando principale .mossad
     if (command === 'mossad') {
-        const welcomeText = "𝐁𝐮𝐨𝐧𝐚𝐬𝐞𝐫𝐚 𝐚 𝐭𝐮𝐭𝐭𝐢, 𝐞 𝐛𝐞𝐧𝐭𝐨𝐫𝐧𝐚𝐭𝐢 𝐢𝐧 𝐪𝐮𝐞𝐬𝐭𝐨 𝐧𝐮𝐨𝐯𝐨 𝐞𝐯𝐞𝐧𝐭𝐨 𝐝𝐞𝐥 𝐦𝐨𝐬𝐬𝐚𝐝 𝐝𝐢𝐫𝐞𝐭𝐭𝐨 𝐝𝐚𝐥 𝐜𝐚𝐩𝐨 𝐝𝐞𝐥 𝐦𝐨𝐬𝐬𝐚𝐝 𝐃𝐮𝐱 𝐂𝐫𝐢𝐬.\n\n⬇️ 𝐕𝐮𝐨𝐢 𝐩𝐫𝐨𝐜𝐞𝐝𝐞𝐫𝐞 𝐜𝐨𝐧 𝐥'𝐞𝐯𝐞𝐧𝐭𝐨?";
+        const welcomeText = "𝐁𝐮𝐨𝐧𝐚𝐬𝐞𝐫𝐚 𝐚 𝐭𝐮𝐭𝐭𝐢, 𝐞 𝐛𝐞𝐧𝐭𝐨𝐫𝐧𝐚𝐭𝐢 𝐢𝐧 𝐪𝐮𝐞𝐬𝐭𝐨 𝐧𝐮𝐨𝐯𝐨 𝐞𝐯𝐞𝐧𝐭𝐨 𝐝𝐞𝐥 𝐦𝐨𝐬𝐬𝐚𝐝 𝐝𝐢𝐫𝐞𝐭𝐭𝐨 𝐝𝐚𝐥 𝐜𝐚𝐩𝐨 𝐝𝐞𝐥 𝐦𝐨𝐬𝐬𝐚𝐝 𝒂𝒏𝒌𝒖𝒔𝒉.\n\n⬇️ 𝐕𝐮𝐨𝐢 𝐩𝐫𝐨𝐜𝐞𝐝𝐞𝐫𝐞 𝐜𝐨𝐧 𝐥'𝐞𝐯𝐞𝐧𝐭𝐨?";
 
         await conn.sendMessage(m.chat, {
             text: welcomeText,
