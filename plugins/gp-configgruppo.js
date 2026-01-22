@@ -95,7 +95,7 @@ function creaMenuPrincipale(usedPrefix) {
   return {
     text: `🏠 *GESTIONE GRUPPO - MENU PRINCIPALE*\n\n` +
           `Scegli un'opzione dal menu qui sotto per gestire il gruppo:`,
-    footer: `Powered by GruppoTempo`,
+    footer: `Powered by vexper`,
     buttons: [
       { buttonId: `${usedPrefix}gt-menu-stato`, buttonText: { displayText: "🔄 Cambia Stato" }, type: 1 },
       { buttonId: `${usedPrefix}gt-menu-timer`, buttonText: { displayText: "⏲️ Timer Temporaneo" }, type: 1 },
