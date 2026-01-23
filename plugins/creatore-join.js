@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command, participants, isOwner
   let [_, code] = text.match(linkRegex) || [];
   if (!code) throw `Link non valido!`;
 
-  m.reply(`😎 Attendi 3 secondi, sto entrando nel gruppo`);
+  m.reply(`👉 mbare sto entrando aspetta`);
   await delay(3000);
 
   try {
